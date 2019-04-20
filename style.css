@@ -1,0 +1,80 @@
+@keyframes growth{
+0% {width:10px; height: 10px;}
+25% {width:13px; height: 13px;}
+50% {width:15px; height: 15px;}
+75% {width:13px; height: 13px;}
+100% {width:10px; height: 10px;}
+}
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#load{
+    display: block;
+    margin: auto auto;
+    width: 10vw;
+    height: 10vh;
+    margin-top: 10vh;
+    font-size: 2em;
+    background: rgb(50, 113, 143);
+    border: none;
+    border-radius: 5%;
+    color: white;
+}
+#load:hover{
+    cursor: pointer;
+    outline: none;
+}
+#load:active{
+    outline: none;
+}
+.loading{
+    background: rgb(199, 107, 107) !important;
+}
+#waiting{
+    display: none;
+    margin-top: 13vh;
+    text-align: center;
+    font-size: 4em;
+    color:rgb(70, 70, 70);
+}
+.points{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(70, 70, 70);
+    animation: growth  900ms infinite linear;
+}
+.secont_point{
+    animation-delay: 300ms;
+}
+.third_point{
+    animation-delay: 600ms;
+}
+#pizza{
+    display: none;
+    margin:-15vh auto;
+    width: 300px;
+    height: 300px;
+}
+#circle{
+    position: relative;
+    top: 150px;
+    background: url('pizza1.png');
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.cuts{
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 2px;
+    background: rgb(49, 49, 49);
+}
+.partyInfo{
+    font-size: 2em;
+    margin-top: 25vh;
+    text-align: center;
+}
