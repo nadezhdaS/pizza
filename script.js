@@ -65,6 +65,7 @@ function getParticipants() {
             }
         )
         .catch(function (err) {
+            removeWaiting();
             console.log('Error', err);
         });
 
