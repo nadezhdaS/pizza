@@ -11,8 +11,8 @@
 #load{
     display: block;
     margin: auto auto;
-    width: 10vw;
-    height: 10vh;
+    width: 150px;
+    height: 70px;
     margin-top: 10vh;
     font-size: 2em;
     background: rgb(50, 113, 143);
@@ -26,6 +26,9 @@
 }
 #load:active{
     outline: none;
+}
+#load:focus{
+    outline: none;    
 }
 .loading{
     background: rgb(199, 107, 107) !important;
@@ -60,7 +63,7 @@
 #circle{
     position: relative;
     top: 150px;
-    background: url('pizza1.png');
+    background: url('pizza.png');
     background-size: cover;
     width: 300px;
     height: 300px;

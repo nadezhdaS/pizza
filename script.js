@@ -1,6 +1,6 @@
 const buttonLoad = document.getElementById('load');
-const divPizza = document.getElementById('pizza');
 const divWaiting = document.getElementById('waiting');
+const divPizza = document.getElementById('pizza');
 
 function waiting(){
     divWaiting.style.display='block';
@@ -34,21 +34,18 @@ function getParticipants() {
                         amountOfEaters++;
                     }
                 });
-                buttonLoad.classList.remove('loading');
-                divWaiting.style.display='none';
-                divPizza.style.display='block';
                 drawPizza (amountOfEaters, numberOfParticipants);
             });
         }
     )
     .catch(function(err) {
-        console.log('Fetch Error :-S', err);
+        console.log('Error', err);
     });
-}
 
-buttonLoad.addEventListener("click", cleaner);
-buttonLoad.addEventListener("click", waiting);
-buttonLoad.addEventListener("click", getParticipants);
+    buttonLoad.classList.remove('loading');
+    divWaiting.style.display='none';
+    divPizza.style.display='block';
+}
 
 function drawPizza (eaters, allParticipants){
     let numberOfCuts = eaters/2;
@@ -60,10 +57,12 @@ function drawPizza (eaters, allParticipants){
         divCut.style.transform = 'rotate(' + deg+ 'deg)'
         divPizza.appendChild(divCut);
     }
-    var divPartyInfo = document.createElement('div');
-    divPartyInfo.innerHTML = 'A number of party participants ' + allParticipants + ' and pizza eaters ' + eaters;
+    let divPartyInfo = document.createElement('div');
+    divPartyInfo.innerHTML = 'A number of party participants: <b>' + allParticipants + '</b><br>Pizza eaters: <b>' + eaters + '</b>';
     divPartyInfo.className = 'partyInfo';
     divPizza.appendChild(divPartyInfo);
 };
 
-
+buttonLoad.addEventListener("click", cleaner);
+buttonLoad.addEventListener("click", waiting);
+buttonLoad.addEventListener("click", getParticipants);
