@@ -1,6 +1,7 @@
 const buttonLoad = document.getElementById('load');
 const divWaiting = document.getElementById('waiting');
 const divPizza = document.getElementById('pizza');
+const divInfo = document.getElementById('info');
 
 function addWaiting() {
     divWaiting.style.display = 'block';
@@ -15,8 +16,14 @@ function removeWaiting() {
 }
 
 function deleteCuts() {
-    while (divPizza.childNodes.length > 2) {
-        divPizza.removeChild(divPizza.lastChild);
+    while (divPizza.firstChild) {
+        divPizza.removeChild(divPizza.firstChild);
+    }
+}
+
+function deleteInfo(){
+    while (divInfo.firstChild) {
+        divInfo.removeChild(divInfo.firstChild);
     }
 }
 
@@ -34,10 +41,10 @@ function drawPizza(eaters) {
 };
 
 function drawInfo(allParticipants, eaters) {
+    deleteInfo();
     let divPartyInfo = document.createElement('div');
     divPartyInfo.innerHTML = 'A number of party participants: <b>' + allParticipants + '</b><br>Pizza eaters: <b>' + eaters + '</b>';
-    divPartyInfo.className = 'partyInfo';
-    divPizza.appendChild(divPartyInfo);
+    divInfo.appendChild(divPartyInfo);
 }
 
 function getParticipants() {
